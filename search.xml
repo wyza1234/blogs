@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo博文写作之博客生成generate常见错误集锦</title>
+    <url>/wyza1234.github.io/2020/12/19/hexo%E5%8D%9A%E6%96%87%E5%86%99%E4%BD%9C%E4%B9%8B%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90generate%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/</url>
+    <content><![CDATA[<h2 id="错误类型1"><a href="#错误类型1" class="headerlink" title="错误类型1"></a>错误类型1</h2><h3 id="错误描述"><a href="#错误描述" class="headerlink" title="错误描述"></a>错误描述</h3><p>YAMLException: end of the stream or a document separator is expected at line x, column y:</p>
+<h3 id="错误说明"><a href="#错误说明" class="headerlink" title="错误说明"></a>错误说明</h3><p>缺少分隔符，一般都是因为缺少空格</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>出现这种情况，一般都是缺少空格，在<code>:</code>冒号之后要有空格！检查x行y列附近的冒号，其之后是否跟了空格。</p>
+<h2 id="错误类型2"><a href="#错误类型2" class="headerlink" title="错误类型2"></a>错误类型2</h2><h3 id="错误描述-1"><a href="#错误描述-1" class="headerlink" title="错误描述"></a>错误描述</h3><p>ValidationError: ‘null’ is not a string!</p>
+<h3 id="错误说明-1"><a href="#错误说明-1" class="headerlink" title="错误说明"></a>错误说明</h3><p>一般都是因为文章无内容，可能是因为在这篇博客文章中，有某些属性没有填写，比如author属性，tag属性，categories属性等，导致该属性是空的，即<code>null</code>，所以报错。<br><strong>友情提示</strong>：如果你是用MarkdownPad 2来进行博文写作（我就是），可能在打开该md文件之后，对文件名进行了修改，导致出现了两篇文章。就会出现错误。</p>
+<h3 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h3><p>既然是属性缺失，那就把为空的那个属性给补上吧，仔细找找 :-)</p>
+<h2 id="错误类型3"><a href="#错误类型3" class="headerlink" title="错误类型3"></a>错误类型3</h2><h3 id="错误描述-2"><a href="#错误描述-2" class="headerlink" title="错误描述"></a>错误描述</h3><p>generate的时候是没问题的，但是网页预览的时候，发现引用块有问题，原本引用块下方的内容跑到引用块里边去了！</p>
+<h3 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h3><p>引用块都是由一对三个**<code>\**所包起来的，如果在最后一个点\**</code>**之后有空格，界面会错乱，所以，把这个多余的空格去掉吧。</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>错误</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Konachan图片</title>
+    <url>/wyza1234.github.io/2020/12/18/konachan%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<p><img src= "/wyza1234.github.io/img/loading.gif" data-lazy-src="https://raw.githubusercontent.com/wyza1234/img/master/imgKonachan.com%20-%20320562%20sample.jpg"></p>
+<p><img src= "/wyza1234.github.io/img/loading.gif" data-lazy-src="https://raw.githubusercontent.com/wyza1234/img/master/imgKonach-min.jpg"></p>
+<p><img src= "/wyza1234.github.io/img/loading.gif" data-lazy-src="https://i.imgur.com/f8UVfoF.jpg"></p>
+<p><img src= "/wyza1234.github.io/img/loading.gif" data-lazy-src="https://i.imgur.com/KvhgjmP.png" alt="Imgur"></p>
+<p><img src= "/wyza1234.github.io/img/loading.gif" data-lazy-src="https://i.imgur.com/cggY6b7.jpg" alt="Imgur"></p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>图片</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>今天Blog实现了自动发布，以及域名访问</title>
+    <url>/wyza1234.github.io/2020/12/20/%E4%BB%8A%E5%A4%A9blog%E5%AE%9E%E7%8E%B0%E4%BA%86%E8%87%AA%E5%8A%A8%E5%8F%91%E5%B8%83%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AE/</url>
+    <content><![CDATA[<p>今天blog实现了自动发布，以及域名访问</p>
+<p>用git action自动发布折腾了很久也不行，改用tarvis秒成功，fuck了!!</p>
+<p>然后是花6块前买了个.top域名，一年。挺便宜的。</p>
+<p>用的dnspod解析</p>
+<p>本来还想用CDN的，想想算了，blog部署就折腾到这吧。</p>
+<p>这两天花在blog环境部署上时间太多了，以后有心思了再说吧。</p>
+]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>“今天开始写微信小程序”</title>
+    <url>/wyza1234.github.io/2020/12/19/%E4%BB%8A%E5%A4%A9%E5%BC%80%E5%A7%8B%E5%86%99%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
+    <content><![CDATA[<p>昨天折腾了一天hexo，换了两套主题，大致上可以用了，也比较美观了。</p>
+<p>昨天课也没听，今天补上，还得做做作业。</p>
+]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>微信</tag>
+        <tag>小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>好吧，骑士昨天没写小程序</title>
+    <url>/wyza1234.github.io/2020/12/20/%E5%A5%BD%E5%90%A7%EF%BC%8C%E5%85%B6%E5%AE%9E%E6%98%A8%E5%A4%A9%E6%B2%A1%E5%86%99%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>elementUI杂乱知识点</title>
+    <url>/wyza1234.github.io/2021/01/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/elementUI/elementUI%E6%9D%82%E4%B9%B1%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+    <content><![CDATA[<h1 id="1-上传图片"><a href="#1-上传图片" class="headerlink" title="1. 上传图片"></a>1. 上传图片</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--html部分--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--action,headers的值用mixin里的--&gt;</span></span><br><span class="line"> &lt;el-upload</span><br><span class="line"> 	ref=&quot;upload&quot;</span><br><span class="line"> 	class=&quot;upload-demo&quot;</span><br><span class="line"> 	:action=&quot;uploadIMG&quot;</span><br><span class="line"> 	:headers=&quot;uploadHeaders&quot;</span><br><span class="line"> 	multiple</span><br><span class="line"> 	:on-success=&quot;uploadSuccess&quot;</span><br><span class="line"> 	&gt;</span><br><span class="line"> <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">size</span>=<span class="string">&quot;small&quot;</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span>&gt;</span>上传图片<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">el-upload</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-1-引入mixin"><a href="#1-1-引入mixin" class="headerlink" title="1.1 引入mixin"></a>1.1 引入mixin</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//js部分</span></span><br><span class="line"><span class="comment">//引入mixin</span></span><br><span class="line"><span class="keyword">import</span> mixin <span class="keyword">from</span> <span class="string">&#x27;@/mixin/index&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line"> 	mixins: [mixin]</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1-2-upload-vue结束…"><a href="#1-2-upload-vue结束…" class="headerlink" title="1.2 upload.vue结束…"></a>1.2 upload.vue结束…</h2><hr>
+<h2 id="1-3-mixin-内容-mixin-js"><a href="#1-3-mixin-内容-mixin-js" class="headerlink" title="1.3 mixin 内容(mixin.js)"></a>1.3 mixin 内容(mixin.js)</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//mixin内容</span></span><br><span class="line"><span class="keyword">import</span> &#123; getToken &#125; <span class="keyword">from</span> <span class="string">&#x27;@/utils/auth&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line"> 	<span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line"> 		<span class="keyword">return</span> &#123;</span><br><span class="line"> 			page: &#123;</span><br><span class="line"> 			currentPage: <span class="number">1</span>,</span><br><span class="line"> 			size: <span class="number">10</span>,</span><br><span class="line"> 			pageSizes: \[<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>\], <span class="comment">// pageSizes得是 pageSize的整数倍</span></span><br><span class="line"> 			total: <span class="number">0</span></span><br><span class="line"> 			&#125;,</span><br><span class="line">			<span class="comment">///lejuAdmin/material/uploadFileOss是接口地址</span></span><br><span class="line"> 			uploadUrl: <span class="string">&#x27;/lejuAdmin/material/uploadFileOss&#x27;</span>,</span><br><span class="line"> 			uploadIMG: <span class="string">&#x27;/lejuAdmin/material/uploadFileOssSave&#x27;</span>,</span><br><span class="line"> 			uploadHeaders: &#123;</span><br><span class="line"> 			token: getToken()</span><br><span class="line"> 			&#125;</span><br><span class="line"> 		&#125;</span><br><span class="line"> 	&#125;</span><br><span class="line">&#125;	</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="2-重置表单"><a href="#2-重置表单" class="headerlink" title="2. 重置表单"></a>2. 重置表单</h2><p>form表单原来是需要prop才能生效,折腾了一晚上.<br>我的form-item里面是input等内容,没用到prop<br>更换思路,直接重置data里form{}的值<br>方法如下:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Object</span>.keys(<span class="built_in">this</span>.form).forEach(<span class="function"><span class="params">key</span> =&gt;</span> (<span class="built_in">this</span>.form[key] = <span class="string">&#x27;&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-判断日期"><a href="#3-判断日期" class="headerlink" title="3. 判断日期"></a>3. 判断日期</h2><p>通过element-ui table上 formatter属性</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&lt;el-table-column</span><br><span class="line">	label=&quot;是否过期&quot;</span><br><span class="line">prop=&quot;promotionEndTime&quot;</span><br><span class="line">	width=&quot;180&quot;</span><br><span class="line">	:formatter=&quot;formatter&quot;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">formatter</span>(<span class="params">row</span>)</span> &#123;</span><br><span class="line">	<span class="comment">// console.log(&#x27;formatter==&#x27;, row.promotionEndTime)</span></span><br><span class="line"><span class="comment">//后台获取时间,转换为时间戳</span></span><br><span class="line">	<span class="keyword">var</span> EndTime = row.promotionEndTime</span><br><span class="line">	<span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(EndTime.replace(<span class="regexp">/-/g</span>, <span class="string">&#x27;/&#x27;</span>))</span><br><span class="line">	<span class="keyword">var</span> time1 = date.getTime()</span><br><span class="line"><span class="comment">//获取当前时间,转换为时间戳</span></span><br><span class="line">	<span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">	<span class="keyword">var</span> time2 = date2.getTime()</span><br><span class="line">	<span class="comment">// console.log(&#x27;转换结果===&gt;&#x27;, time1)</span></span><br><span class="line">	<span class="comment">// console.log(&#x27;现在时间结果===&gt;&#x27;, time2)</span></span><br><span class="line"><span class="comment">//比较大小</span></span><br><span class="line">	<span class="keyword">if</span> (time2 &gt; time1) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&#x27;已过期&#x27;</span></span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&#x27;未过期&#x27;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-跨域CORS"><a href="#4-跨域CORS" class="headerlink" title="4. 跨域CORS"></a>4. 跨域CORS</h2><p>vue.config.js中</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports=&#123;</span><br><span class="line">proxy:&#123;</span><br><span class="line">target:<span class="string">&quot;http://localhost&quot;</span>,</span><br><span class="line">changeOrigin:<span class="literal">true</span> </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-点击弹出框调用子组件"><a href="#5-点击弹出框调用子组件" class="headerlink" title="5. 点击弹出框调用子组件"></a>5. 点击弹出框调用子组件</h2><p>把弹出框写成组件<br>父页面调用子组件方法</p>
+<p>子:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&lt;子组件 @sendFather=fatherGet ref=&quot;组件名&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//子组件传父</span></span><br><span class="line"><span class="built_in">this</span>.$emit(<span class="string">&#x27;sendFather&#x27;</span>, value)</span><br></pre></td></tr></table></figure>
+<p>父:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//父页面调用子组件方法</span></span><br><span class="line">	<span class="function"><span class="title">open</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">this</span>.$refs.子组件ref名字.子组件方法名字(参数)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//接收子组件的值</span></span><br><span class="line"><span class="function"><span class="title">fatherGet</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&#x27;这里接收子组件的值====&#x27;</span>, val)</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-数组字符串互相转换"><a href="#6-数组字符串互相转换" class="headerlink" title="6. 数组字符串互相转换"></a>6. 数组字符串互相转换</h2><h3 id="6-1-数组-转-字符串"><a href="#6-1-数组-转-字符串" class="headerlink" title="6.1 数组 转 字符串"></a>6.1 数组 转 字符串</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//数组转字符串,用[,]号连接</span></span><br><span class="line">	arr.join(<span class="string">&#x27;,&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-2-字符串-转-数组"><a href="#6-2-字符串-转-数组" class="headerlink" title="6.2 字符串 转 数组"></a>6.2 字符串 转 数组</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">str.split(<span class="string">&#x27;,&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-子组件-clicknative"><a href="#7-子组件-clicknative" class="headerlink" title="7. 子组件 clicknative"></a>7. 子组件 clicknative</h2><p>在子组件的click上加上native 才可以触发click事件,否则click不起作用</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&lt;子组件 @click.native=&quot;open&quot;/&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>elementUI</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+        <tag>elementUI</tag>
+        <tag>杂乱知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小程序Request封装</title>
+    <url>/wyza1234.github.io/2020/12/24/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%B0%8F%E7%A8%8B%E5%BA%8Frequest%E5%B0%81%E8%A3%85/</url>
+    <content><![CDATA[<h1 id="1-在utils中"><a href="#1-在utils中" class="headerlink" title="1. 在utils中"></a>1. 在utils中</h1><h2 id="1-1-建立baseUrl-js和request-js"><a href="#1-1-建立baseUrl-js和request-js" class="headerlink" title="1.1 建立baseUrl.js和request.js"></a>1.1 建立<code>baseUrl.js</code>和<code>request.js</code></h2><h2 id="1-2-baseUrl-js是接口前缀-内容如下"><a href="#1-2-baseUrl-js是接口前缀-内容如下" class="headerlink" title="1.2 baseUrl.js是接口前缀,内容如下:"></a>1.2 <code>baseUrl.js</code>是接口前缀,内容如下:</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="string">&quot;http://example.com&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-3-request-js是接口封装核心，内容如下："><a href="#1-3-request-js是接口封装核心，内容如下：" class="headerlink" title="1.3    request.js是接口封装核心，内容如下："></a>1.3    <code>request.js</code>是接口封装核心，内容如下：</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//引入上一步封装好的的baseUrl.js</span></span><br><span class="line"><span class="keyword">import</span> baseUrl <span class="keyword">from</span> <span class="string">&quot;./baseUrl&quot;</span>  </span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params">config</span>)</span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,rejected</span>)</span>&#123;　</span><br><span class="line"><span class="comment">//以Promise形式封装</span></span><br><span class="line"> 　<span class="keyword">var</span> obj = &#123;</span><br><span class="line"> 　url:baseUrl + config.url,</span><br><span class="line"> 　method:config.method ? config.method.toUpperCase() : <span class="string">&quot;GET&quot;</span>,</span><br><span class="line">  <span class="comment">//如果有method，那就用自带的method，不然用GET</span></span><br><span class="line"> 　data:config.data,</span><br><span class="line"> 　timeout:<span class="number">5000</span>,</span><br><span class="line"> 　<span class="comment">// header:&#123;</span></span><br><span class="line"> 　<span class="comment">//   &#x27;content-type&#x27;:&quot;application/x-www-form-urlencoded&quot;</span></span><br><span class="line"> 　<span class="comment">// &#125;,</span></span><br><span class="line"> 　<span class="comment">//header:&#123;</span></span><br><span class="line"> 　<span class="comment">//&quot;bufan-token&quot;:wx.getStorageSync(&#x27;bufan-token&#x27;)</span></span><br><span class="line"> 　<span class="comment">//&#125;,</span></span><br><span class="line"> 　<span class="function"><span class="title">success</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line"> 　resolve(res)</span><br><span class="line"> 　&#125;,</span><br><span class="line"> 　<span class="function"><span class="title">fail</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line"> 　rejected(res)</span><br><span class="line"> 　&#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//微信默认POST为JSON格式，如果服务器要求表单形式，这里要进行转换</span></span><br><span class="line"> 　<span class="keyword">if</span>(config.method)&#123; <span class="comment">// get / post</span></span><br><span class="line"> 　  <span class="keyword">if</span>(config.method.toUpperCase() == <span class="string">&quot;POST&quot;</span>)&#123;</span><br><span class="line"> 　     obj.header[<span class="string">&#x27;content-type&#x27;</span>] = <span class="string">&quot;application/x-www-form-urlencoded&quot;</span></span><br><span class="line"> 　    &#125;</span><br><span class="line"> 　  &#125;</span><br><span class="line"> 　wx.request(obj)</span><br><span class="line"> 　&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> fun;</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-使用request请求时"><a href="#2-使用request请求时" class="headerlink" title="2. 使用request请求时"></a>2. 使用request请求时</h1><h2 id="2-1-在utils中新建请求pages页面同名文件夹-如pages下的home有请求，则在utils中新建home文件夹，在home文件夹内新建index-js-内容如下："><a href="#2-1-在utils中新建请求pages页面同名文件夹-如pages下的home有请求，则在utils中新建home文件夹，在home文件夹内新建index-js-内容如下：" class="headerlink" title="2.1 在utils中新建请求pages页面同名文件夹(如pages下的home有请求，则在utils中新建home文件夹，在home文件夹内新建index.js,)内容如下："></a>2.1 在utils中新建请求pages页面同名文件夹(如pages下的home有请求，则在utils中新建home文件夹，在home文件夹内新建<code>index.js</code>,)内容如下：</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//引入上一步封装好的request.js</span></span><br><span class="line"><span class="keyword">import</span> request <span class="keyword">from</span> <span class="string">&quot;../request&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//给需要用的请求起个名字</span></span><br><span class="line"><span class="comment">//本例为orderZhan</span></span><br><span class="line"><span class="comment">//url是去掉baseUrl前缀后的地址</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">orderZhan</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line"> <span class="keyword">return</span> request(&#123;</span><br><span class="line">	 url:<span class="string">&quot;/admin/xy/lite/student/orderZhan&quot;</span>,</span><br><span class="line">	 method:<span class="string">&quot;post&quot;</span>,</span><br><span class="line">	 data</span><br><span class="line"> &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doLogin</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line"> <span class="keyword">return</span> request(&#123;</span><br><span class="line">	url:<span class="string">&quot;/admin/login/doLogin&quot;</span>,</span><br><span class="line">	method:<span class="string">&quot;post&quot;</span>,</span><br><span class="line"> 	data</span><br><span class="line"> &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 服务端确认试听申请 状态1-2</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">confirmZhan</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line"> <span class="keyword">return</span> request(&#123;</span><br><span class="line"> 	url:<span class="string">&quot;/admin/xy/student/confirmZhan&quot;</span>,</span><br><span class="line"> 	method:<span class="string">&quot;get&quot;</span>,</span><br><span class="line"> 	data</span><br><span class="line"> &#125;)</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">	</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">classList</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line"> <span class="keyword">return</span> request(&#123;</span><br><span class="line"> 	url:<span class="string">&quot;/admin/xy/clazz/list&quot;</span>,</span><br><span class="line"> 	method:<span class="string">&quot;get&quot;</span>,</span><br><span class="line"> 	data</span><br><span class="line"> &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//把建立的接口暴露出去给页面的JS使用</span></span><br><span class="line"><span class="keyword">export</span> &#123;</span><br><span class="line"> orderZhan,</span><br><span class="line"> doLogin,</span><br><span class="line"> confirmZhan,</span><br><span class="line"> classList</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-pages页面的JS使用接口"><a href="#2-2-pages页面的JS使用接口" class="headerlink" title="2.2 pages页面的JS使用接口"></a>2.2 pages页面的JS使用接口</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//引入写在utils中的接口</span></span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line"> orderZhan,</span><br><span class="line"> doLogin,</span><br><span class="line"> confirmZhan,</span><br><span class="line"> classList</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&quot;../../../utils/form/index&quot;</span></span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line"> data: &#123;</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line"> &#125;,</span><br><span class="line"></span><br><span class="line">   <span class="comment">//使用接口orderZhan</span></span><br><span class="line">  <span class="function"><span class="title">submit</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">   <span class="comment">//console.log(e);</span></span><br><span class="line">   orderZhan(result)</span><br><span class="line">   .then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(res)</span><br><span class="line">   &#125;)</span><br><span class="line"> &#125;,</span><br><span class="line"> <span class="comment">//使用接口doLogin</span></span><br><span class="line">  <span class="function"><span class="title">logins</span>(<span class="params"></span>)</span>&#123;	</span><br><span class="line"> 	doLogin(&#123;</span><br><span class="line"> 	username:<span class="string">&quot;admin&quot;</span>,</span><br><span class="line"> 	password:<span class="string">&quot;123456&quot;</span></span><br><span class="line"> 	&#125;)</span><br><span class="line"> 	.then(<span class="function"><span class="params">res</span> =&gt;</span>&#123;</span><br><span class="line"> 	<span class="comment">//console.log(res);</span></span><br><span class="line"> 	wx.setStorageSync(<span class="string">&#x27;bufan-token&#x27;</span>, res.data.token)</span><br><span class="line">	&#125;)</span><br><span class="line"> &#125;,</span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>封装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小程序杂乱知识点</title>
+    <url>/wyza1234.github.io/2020/12/21/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%9D%82%E4%B9%B1%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+    <content><![CDATA[<h2 id="1-一个元素dom元素执行两个函数，要写两个bind，而不是vue那样用-分号-分开"><a href="#1-一个元素dom元素执行两个函数，要写两个bind，而不是vue那样用-分号-分开" class="headerlink" title="1.  一个元素dom元素执行两个函数，要写两个bind，而不是vue那样用 分号 分开"></a>1.  一个元素dom元素执行两个函数，要写两个bind，而不是vue那样用 分号 分开</h2><ul>
+<li>  <code>&lt;button bindtap=&quot;closeMask&quot; bindtap=&quot;uptName&quot;&gt;更改&lt;/button&gt;</code></li>
+</ul>
+<h2 id="2-点击空白关闭-遮罩层模态框"><a href="#2-点击空白关闭-遮罩层模态框" class="headerlink" title="2.点击空白关闭 遮罩层模态框"></a>2.点击空白关闭 遮罩层模态框</h2><ul>
+<li><p>利用1，把 关闭遮罩层 的函数，利用自定义属性传值，并使用**<code>catchtap</code>** 阻止内部盒子冒泡。<br>JS里通过自定义属性值判断是内部盒子还是外部大盒子。<br>如果是外部大盒子就 关闭遮罩层 ，否则不关。</p>
+</li>
+<li><p>HTML部分：</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;mask&quot;</span> <span class="attr">data-close</span>=<span class="string">&quot;1&quot;</span> <span class="attr">bindtap</span>=<span class="string">&quot;closeMask&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span> <span class="attr">data-close</span>=<span class="string">&quot;0&quot;</span> <span class="attr">catchtap</span>=<span class="string">&quot;closeMask&quot;</span>&gt;</span>		 </span><br><span class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>JS部分：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">closeMask</span>(<span class="params">v</span>)</span> &#123;	 </span><br><span class="line">     <span class="keyword">let</span> close = v.target.dataset.close</span><br><span class="line">     <span class="keyword">if</span> (close == <span class="number">1</span>) &#123;</span><br><span class="line">       <span class="built_in">this</span>.triggerEvent(<span class="string">&#x27;closeMask&#x27;</span>, <span class="literal">false</span>)</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">console</span>.log(v.target.dataset.close);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+</br>
+</br>
+
+
+<h2 id="3-跨-页面组件传值"><a href="#3-跨-页面组件传值" class="headerlink" title="3.跨 页面组件传值"></a>3.跨 页面组件传值</h2><h3 id="3-1组件传父"><a href="#3-1组件传父" class="headerlink" title="3.1组件传父"></a>3.1组件传父</h3><ul>
+<li>子组件JS中发送： <code>this.triggerEvent</code>，</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Component(&#123;</span><br><span class="line">	methods: &#123;</span><br><span class="line">    	<span class="function"><span class="title">uptName</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      		<span class="built_in">this</span>.triggerEvent(<span class="string">&#x27;childevents&#x27;</span>, <span class="number">2</span>)</span><br><span class="line">    		&#125;,</span><br><span class="line">		&#125;</span><br><span class="line">	)&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>父组件页面内的子组件HTML接收：<br><code>&lt;mask1 bindchildevents=&quot;getMessage&quot;  &gt;</code></p>
+</li>
+<li><p>JS中执行：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">getMessage</span>(<span class="params">e</span>)</span> &#123;</span><br><span class="line">  <span class="keyword">var</span> item =    <span class="built_in">this</span>.data.list.find(<span class="function"><span class="params">ele</span>=&gt;</span>ele.name==<span class="built_in">this</span>.data.maskProps);</span><br><span class="line">    item.name = e.detail;</span><br><span class="line">    <span class="built_in">this</span>.setData(&#123;</span><br><span class="line">      list: <span class="built_in">this</span>.data.list,</span><br><span class="line">      maskProps: e.detail</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</br>
+
+<h3 id="3-2父传组件"><a href="#3-2父传组件" class="headerlink" title="3.2父传组件"></a>3.2父传组件</h3><ol>
+<li><p>父组件JS的data中设置值<br><code>data: &#123;maskProps: &quot;123456&quot;,&#125;</code></p>
+</li>
+<li><p>父组件页面内的子组件HTML中通过自定义属性接收值<br><code>&lt;mask1 goosname=&quot;&#123;&#123; maskProps &#125;&#125;&quot;&gt;</code></p>
+</li>
+<li><p>子组件JS的properties接受值</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Component(&#123;</span><br><span class="line">     properties: &#123;</span><br><span class="line">      	  goosname: &#123;</span><br><span class="line">         	type: <span class="built_in">String</span>,</span><br><span class="line">		 	<span class="comment">//Number,String,Object,Array,Boolean			 </span></span><br><span class="line">         	value: <span class="string">&quot;这是默认值&quot;</span></span><br><span class="line">        	&#125;</span><br><span class="line">     &#125;,</span><br><span class="line">  )&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-三元表达式动态类名"><a href="#4-三元表达式动态类名" class="headerlink" title="4.  三元表达式动态类名"></a>4.  三元表达式动态类名</h2><p>在类名里面。用花括号把表达式包裹起来</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;switchItem coming  &#123;&#123;switch==&#x27;coming&#x27;?&#x27;active&#x27;:&#x27;&#x27;&#125;&#125;&quot;</span> <span class="attr">data-switch</span>=<span class="string">&#x27;coming&#x27;</span> <span class="attr">bindtap</span>=<span class="string">&quot;clickComing&quot;</span>&gt;</span></span><br><span class="line">即将上映</span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-数组-转-字符串"><a href="#5-数组-转-字符串" class="headerlink" title="5. 数组 转 字符串"></a>5. 数组 转 字符串</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//数组转字符串,用[,]号连接</span></span><br><span class="line">	arr.join(<span class="string">&#x27;,&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-字符串-转-数组"><a href="#6-字符串-转-数组" class="headerlink" title="6. 字符串 转 数组"></a>6. 字符串 转 数组</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">str.split(<span class="string">&#x27;,&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-子组件-clicknative"><a href="#7-子组件-clicknative" class="headerlink" title="7. 子组件 clicknative"></a>7. 子组件 clicknative</h2><p>在子组件的click上加上native 才可以触发click事件,否则click不起作用</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&lt;子组件 @click.native=&quot;open&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-点击弹出框组件传值"><a href="#8-点击弹出框组件传值" class="headerlink" title="8. 点击弹出框组件传值"></a>8. 点击弹出框组件传值</h2><p>把弹出框写成组件<br>父页面调用子组件方法</p>
+<h3 id="8-1-子传父"><a href="#8-1-子传父" class="headerlink" title="8.1 子传父:"></a>8.1 子传父:</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&lt;子组件 @sendFather=fatherGet ref=&quot;组件名&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//子组件传父</span></span><br><span class="line"><span class="built_in">this</span>.$emit(<span class="string">&#x27;sendFather&#x27;</span>, value)</span><br></pre></td></tr></table></figure>
+<h3 id="8-2-父调用子"><a href="#8-2-父调用子" class="headerlink" title="8.2 父调用子:"></a>8.2 父调用子:</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//父页面调用子组件方法</span></span><br><span class="line">	<span class="function"><span class="title">open</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">this</span>.$refs.子组件ref名字.子组件方法名字(参数)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//接收子组件的值</span></span><br><span class="line"><span class="function"><span class="title">fatherGet</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&#x27;这里接收子组件的值====&#x27;</span>, val)</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>小程序</tag>
+        <tag>遮罩层</tag>
+        <tag>页面传值</tag>
+        <tag>类名</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信小程序第三天</title>
+    <url>/wyza1234.github.io/2020/12/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AC%AC%E4%B8%89%E5%A4%A9/</url>
+    <content><![CDATA[<h2 id="1-获取用户信息的三种方式"><a href="#1-获取用户信息的三种方式" class="headerlink" title="1. 获取用户信息的三种方式"></a>1. 获取用户信息的三种方式</h2><h3 id="1-1-open-data"><a href="#1-1-open-data" class="headerlink" title="1.1 open-data"></a>1.1 open-data</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">open-data</span> <span class="attr">type</span>=<span class="string">&quot;userAvatarUrl&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">open-data</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">open-data</span> <span class="attr">type</span>=<span class="string">&quot;userNickName&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">open-data</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>用于展示微信开放的数据。</p>
+<p>可以直接获取用户信息而无需进行js调用</p>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/component/open-data.html">参考</a></p>
+<h3 id="1-2-js的方式进行调用"><a href="#1-2-js的方式进行调用" class="headerlink" title="1.2 js的方式进行调用"></a>1.2 js的方式进行调用</h3><p>利用 <strong>wx.getUserInfo()</strong> 接口，可以进行获取信息的获取</p>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/wx.getUserInfo.html">参考</a></p>
+<h4 id="注意-已过气："><a href="#注意-已过气：" class="headerlink" title="注意,已过气："></a>注意,已过气：</h4><blockquote>
+<p>在用户未授权过的情况下调用此接口，将不再出现授权弹窗，会直接进入 fail 回调；在用户已授权的情况下调用此接口，可成功获取用户信息。<br> 想过手动设置弹窗，然而企鹅官网这样说：<br><code>wx.authorize(&#123;scope: &quot;scope.userInfo&quot;&#125;)</code>，不会弹出授权窗口，请使用 <a href="https://developers.weixin.qq.com/miniprogram/dev/component/button.html"><code>&lt;button open-type=&quot;getUserInfo&quot;/&gt;</code></a><br> 得，彻底封死了。用 [[#1 3 button组件，弹窗授权|button组件，弹窗授权]]吧</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 必须是在用户已经授权的情况下调用</span></span><br><span class="line">wx.getUserInfo(&#123;</span><br><span class="line">  success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> userInfo = res.userInfo</span><br><span class="line">    <span class="keyword">var</span> nickName = userInfo.nickName</span><br><span class="line">    <span class="keyword">var</span> avatarUrl = userInfo.avatarUrl</span><br><span class="line">    <span class="keyword">var</span> gender = userInfo.gender <span class="comment">//性别 0：未知、1：男、2：女</span></span><br><span class="line">    <span class="keyword">var</span> province = userInfo.province</span><br><span class="line">    <span class="keyword">var</span> city = userInfo.city</span><br><span class="line">    <span class="keyword">var</span> country = userInfo.country</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">fail</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">      wx.showToast(&#123;</span><br><span class="line">          title: <span class="string">&#x27;获取用户信息失败，请先授权应用才能继续操作&#x27;</span>,</span><br><span class="line">          icon: <span class="string">&#x27;success&#x27;</span>,</span><br><span class="line">          duration: <span class="number">2000</span></span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-button组件，弹窗授权"><a href="#1-3-button组件，弹窗授权" class="headerlink" title="1.3 button组件，弹窗授权"></a>1.3 button组件，弹窗授权</h3><p><strong>注意</strong>:引导用户授权操作只能通过组件的方式进行授权</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 如果只是展示用户头像昵称，可以使用 &lt;open-data /&gt; 组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">open-data</span> <span class="attr">type</span>=<span class="string">&quot;userAvatarUrl&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">open-data</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">open-data</span> <span class="attr">type</span>=<span class="string">&quot;userNickName&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">open-data</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 需要使用 button 来授权登录 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">wx:if</span>=<span class="string">&quot;&#123;&#123;canIUse&#125;&#125;&quot;</span> <span class="attr">open-type</span>=<span class="string">&quot;getUserInfo&quot;</span> <span class="attr">bindgetuserinfo</span>=<span class="string">&quot;bindGetUserInfo&quot;</span>&gt;</span>授权登录<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:else</span>&gt;</span>请升级微信版本<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//好像直接这样用就能获取值了，不用像下面那么繁琐</span></span><br><span class="line"> <span class="function"><span class="title">bindGetUserInfo</span>(<span class="params">e</span>)</span> &#123;</span><br><span class="line"> <span class="built_in">console</span>.log(e)</span><br><span class="line">       <span class="keyword">let</span> nickName = e.detail.userInfo.nickName;</span><br><span class="line">       <span class="built_in">this</span>.setData(&#123;</span><br><span class="line">          nickName</span><br><span class="line">          &#125;)</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    canIUse: wx.canIUse(<span class="string">&#x27;button.open-type.getUserInfo&#x27;</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  onLoad: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 查看是否授权</span></span><br><span class="line">    wx.getSetting(&#123;</span><br><span class="line">      success (res)&#123;</span><br><span class="line">        <span class="keyword">if</span> (res.authSetting[<span class="string">&#x27;scope.userInfo&#x27;</span>]) &#123;</span><br><span class="line">          <span class="comment">// 已经授权，可以直接调用 getUserInfo 获取头像昵称</span></span><br><span class="line">          wx.getUserInfo(&#123;</span><br><span class="line">            success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">              <span class="built_in">console</span>.log(res.userInfo)</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  bindGetUserInfo (e) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e.detail.userInfo)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-登录"><a href="#2-登录" class="headerlink" title="2. 登录"></a>2. 登录</h2><p>小程序登录流程</p>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html">参考</a></p>
+<p><a href="https://apizza.net/pro/#/project/18e39cb27fcdb28165605d716a40cd6e/browse?pass=a511db3cf920386c952dd6bdfbcf42fd">接口文档地址</a></p>
+<h2 id="3-扫码"><a href="#3-扫码" class="headerlink" title="3. 扫码"></a>3. 扫码</h2><p>调起客户端扫码界面进行扫码</p>
+<p><code>wx.scanCode(Object object)</code></p>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/api/device/scan/wx.scanCode.html">参考</a></p>
+<h2 id="4-图片上传"><a href="#4-图片上传" class="headerlink" title="4. 图片上传"></a>4. 图片上传</h2><p>从本地相册选择图片或使用相机拍照。上传到对应的服务器</p>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.chooseImage.html">选择图片参考</a></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 选择本地图片</span></span><br><span class="line">wx.chooseImage(&#123;</span><br><span class="line">  count: <span class="number">1</span>,</span><br><span class="line">  sizeType: [<span class="string">&#x27;original&#x27;</span>, <span class="string">&#x27;compressed&#x27;</span>],</span><br><span class="line">  sourceType: [<span class="string">&#x27;album&#x27;</span>, <span class="string">&#x27;camera&#x27;</span>],</span><br><span class="line">  success (res) &#123;</span><br><span class="line">    <span class="comment">// tempFilePath可以作为img标签的src属性显示图片</span></span><br><span class="line">    <span class="keyword">const</span> tempFilePaths = res.tempFilePaths</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/wx.uploadFile.html">上传图片参考</a></p>
+<p>将本地资源上传到服务器。客户端发起一个 HTTPS POST 请求，其中 <code>content-type</code> 为 <code>multipart/form-data</code>。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">wx.chooseImage(&#123;</span><br><span class="line">  success (res) &#123;</span><br><span class="line">    <span class="keyword">const</span> tempFilePaths = res.tempFilePaths</span><br><span class="line">    wx.uploadFile(&#123;</span><br><span class="line">      url: <span class="string">&#x27;https://example.weixin.qq.com/upload&#x27;</span>, <span class="comment">//仅为示例，非真实的接口地址</span></span><br><span class="line">      filePath: tempFilePaths[<span class="number">0</span>],</span><br><span class="line">      name: <span class="string">&#x27;file&#x27;</span>,</span><br><span class="line">      formData: &#123;</span><br><span class="line">        <span class="string">&#x27;user&#x27;</span>: <span class="string">&#x27;test&#x27;</span></span><br><span class="line">      &#125;,</span><br><span class="line">      success (res)&#123;</span><br><span class="line">        <span class="keyword">const</span> data = res.data</span><br><span class="line">        <span class="comment">//do something</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>用户信息</tag>
+        <tag>图片上传</tag>
+        <tag>扫码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小程序表单校验</title>
+    <url>/wyza1234.github.io/2020/12/24/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C/</url>
+    <content><![CDATA[<p><a href="https://www.cnblogs.com/zhangxiaoyong/p/10166951.html">微信小程序之表单验证 - 潇十一郎 - 博客园</a></p>
+<h1 id="表单组件"><a href="#表单组件" class="headerlink" title="表单组件"></a>表单组件</h1><h2 id="input"><a href="#input" class="headerlink" title="input"></a>input</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">value</span>=<span class="string">&quot;alpha&quot;</span> <span class="attr">bindinput</span>=<span class="string">&quot;inputValue&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="获取input值："><a href="#获取input值：" class="headerlink" title="获取input值："></a>获取input值：</h3><p>输入框内容改变时触发<code>bindinput</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">inputValue</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(e)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>⬆以上适合数量少的值获取</em><br></br></p>
+<h2 id="form"><a href="#form" class="headerlink" title="form"></a>form</h2><p>form可以获取form内所有input,checkbox····的值。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">bindsubmit</span>=<span class="string">&quot;submit&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">value</span>=<span class="string">&quot;alpha&quot;</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">value</span>=<span class="string">&quot;40&quot;</span> <span class="attr">name</span>=<span class="string">&quot;age&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">form-type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1.给需要获取值的组件取名<br>2.button按钮form-type=”submit”<br>3.bindsubmit=”submit”写在form上获取绑定值的结果</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">submit</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line"><span class="comment">//获取form内所有值</span></span><br><span class="line"><span class="built_in">console</span>.log(e)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="验证步骤"><a href="#验证步骤" class="headerlink" title="验证步骤"></a>验证步骤</h1><h2 id="1-在utils文件夹中放入WxValidate-js"><a href="#1-在utils文件夹中放入WxValidate-js" class="headerlink" title="1.在utils文件夹中放入WxValidate.js"></a>1.在utils文件夹中放入<a href="https://raw.githubusercontent.com/wux-weapp/wx-extend/master/src/assets/plugins/wx-validate/WxValidate.js"><code>WxValidate.js</code></a></h2><h2 id="2-在需要验证的page的js中引入WxValidate-js"><a href="#2-在需要验证的page的js中引入WxValidate-js" class="headerlink" title="2.在需要验证的page的js中引入WxValidate.js"></a>2.在需要验证的page的js中引入<code>WxValidate.js</code></h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app = getApp()</span><br><span class="line"><span class="keyword">import</span> WxValidate <span class="keyword">from</span> <span class="string">&quot;../../utils/validate&quot;</span>;</span><br><span class="line">Page(&#123;</span><br><span class="line">	<span class="comment">//·····</span></span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-填写校验规则"><a href="#3-填写校验规则" class="headerlink" title="3. 填写校验规则"></a>3. 填写校验规则</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"> <span class="function"><span class="title">initValidate</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line"> <span class="comment">// rules 里面存放需要校验的属性</span></span><br><span class="line"> <span class="keyword">let</span> rules = &#123;</span><br><span class="line"> 	username: &#123;</span><br><span class="line"> 	required: <span class="literal">true</span>,</span><br><span class="line"> 	rangelength: [<span class="number">2</span>, <span class="number">5</span>]</span><br><span class="line"> 	&#125;,</span><br><span class="line"> 	age: &#123;</span><br><span class="line"> 	required: <span class="literal">true</span>,</span><br><span class="line"> 	digits: <span class="literal">true</span>,</span><br><span class="line"> 	range: [<span class="number">18</span>, <span class="number">50</span>]</span><br><span class="line"> 	&#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// message 当需要校验的属性不通过时提示的文字内容</span></span><br><span class="line"> <span class="keyword">let</span> message = &#123;</span><br><span class="line"> 	username: &#123;</span><br><span class="line"> 	required: <span class="string">&quot;用户名称必填&quot;</span>,</span><br><span class="line"> 	rangelength: <span class="string">&quot;用户名称长度范围为2-5&quot;</span></span><br><span class="line">	&#125;,</span><br><span class="line">	age: &#123;</span><br><span class="line">	required: <span class="string">&quot;年龄必填&quot;</span>,</span><br><span class="line"> 	digits: <span class="string">&quot;用户年龄必须为数字&quot;</span>,</span><br><span class="line"> 	range: <span class="string">&quot;用户年龄范围在18-45之间&quot;</span></span><br><span class="line"> 	&#125;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> <span class="comment">//实例化当前的验证规则和提示消息</span></span><br><span class="line"> <span class="built_in">this</span>.WxValidate = <span class="keyword">new</span> WxValidate(rules, message);</span><br><span class="line"></span><br><span class="line"> &#125;,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-初始化校验规则"><a href="#4-初始化校验规则" class="headerlink" title="4.初始化校验规则"></a>4.初始化校验规则</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">onLoad</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line"><span class="built_in">this</span>.initValidate();</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-提交表单时校验规则"><a href="#5-提交表单时校验规则" class="headerlink" title="5.提交表单时校验规则"></a>5.提交表单时校验规则</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">submit</span>(<span class="params">e</span>)</span> &#123;</span><br><span class="line"><span class="keyword">var</span> val = e.detail.value;</span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">this</span>.WxValidate.checkForm(val)) &#123;</span><br><span class="line">	<span class="comment">// !this.WxValidate.checkForm(params) 当校验失败所做的处理</span></span><br><span class="line">	<span class="comment">//表单元素验证不通过，此处给出相应提示</span></span><br><span class="line">	<span class="comment">// error 获取到的所有的没有校验通过的属性</span></span><br><span class="line">	<span class="keyword">let</span> error = <span class="built_in">this</span>.WxValidate.errorList;</span><br><span class="line">	<span class="built_in">console</span>.log(error);</span><br><span class="line">	wx.showToast(&#123;</span><br><span class="line">	title: error[<span class="number">0</span>].msg,</span><br><span class="line">	icon: <span class="string">&quot;none&quot;</span></span><br><span class="line">	&#125;)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123; <span class="comment">// 表单校验成功</span></span><br><span class="line">		<span class="comment">// 校验成功执行的操作</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>表单</tag>
+        <tag>校验</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>跨页面传值的三种方法</title>
+    <url>/wyza1234.github.io/2020/12/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E8%B7%A8%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="1-全局变量"><a href="#1-全局变量" class="headerlink" title="1. 全局变量"></a>1. 全局变量</h2><h3 id="1-1-在-app-js中定义全局变量"><a href="#1-1-在-app-js中定义全局变量" class="headerlink" title="1.1 在 app.js中定义全局变量"></a>1.1 在 <code>app.js</code>中定义全局变量</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">globalData: &#123;</span><br><span class="line">    userInfo: <span class="literal">null</span>,</span><br><span class="line">    globalName:<span class="string">&quot;abc&quot;</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2在其他页面使用："><a href="#1-2在其他页面使用：" class="headerlink" title="1.2在其他页面使用："></a>1.2在其他页面使用：</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> app = getApp();    </span><br><span class="line"><span class="built_in">console</span>.log(app.globalData.globalName)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>全局变量，刷新消失</p>
+</blockquote>
+</br>
+
+<h2 id="2-本地储存"><a href="#2-本地储存" class="headerlink" title="2. 本地储存"></a>2. 本地储存</h2><p>推荐使用 <strong>同步方式(Sync)</strong></p>
+<p>JS中：</p>
+<h3 id="2-1-存入数据"><a href="#2-1-存入数据" class="headerlink" title="2.1 存入数据"></a>2.1 存入数据</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">wx.setStorageSync(&#123;</span><br><span class="line">	key: <span class="string">&#x27;information&#x27;</span>,</span><br><span class="line">	<span class="function"><span class="title">success</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//do things</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="function"><span class="title">fail</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//do things</span></span><br><span class="line">	&#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>success 和 fail 回调函数可以省略 </p>
+</blockquote>
+ </br>
+
+<h3 id="2-2-取出数据"><a href="#2-2-取出数据" class="headerlink" title="2.2 取出数据"></a>2.2 取出数据</h3><p> <code>wx.getStorageSync(&quot;key名称&quot;)</code></p>
+<h3 id="2-3-删除数据"><a href="#2-3-删除数据" class="headerlink" title="2.3 删除数据"></a>2.3 删除数据</h3><pre><code>`wx.removeStorageSync(&quot;key名称&quot;)`</code></pre>
+<h3 id="2-4-删除全部数据"><a href="#2-4-删除全部数据" class="headerlink" title="2.4 删除全部数据"></a>2.4 删除全部数据</h3><pre><code>`wx.clearStorageSync()`</code></pre>
+</br>
+
+<h2 id="3-路由传参"><a href="#3-路由传参" class="headerlink" title="3. #路由传参"></a>3. #路由传参</h2><h3 id="3-1-A页面发送参数"><a href="#3-1-A页面发送参数" class="headerlink" title="3.1 A页面发送参数"></a>3.1 A页面发送参数</h3> <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"> wx.navigateTo(&#123;</span><br><span class="line">   url:<span class="string">&#x27;../pageD/pageD?name=&quot;李白&quot;&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意: wx.switchTab 中的 url 不能传参数。</p>
+</blockquote>
+</br>
+
+<h3 id="3-2-B页面接收参数"><a href="#3-2-B页面接收参数" class="headerlink" title="3.2 B页面接收参数"></a>3.2 B页面接收参数</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  onLoad: <span class="function"><span class="keyword">function</span>(<span class="params">option</span>)</span>&#123;</span><br><span class="line"> 	<span class="built_in">console</span>.log(option.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>页面传值</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>两个数组条件筛选</title>
+    <url>/wyza1234.github.io/2021/01/04/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E6%9D%82%E9%A1%B9/%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E6%9D%A1%E4%BB%B6%E7%AD%9B%E9%80%89/</url>
+    <content><![CDATA[<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> <span class="keyword">return</span>&#123;</span><br><span class="line"> 	<span class="comment">//list是对象数组</span></span><br><span class="line">   list:[</span><br><span class="line">     &#123;<span class="attr">id</span>:<span class="string">&#x27;1345999489956909057&#x27;</span>, <span class="attr">name</span>:<span class="string">&#x27;abc&#x27;</span>&#125;,</span><br><span class="line">     &#123;<span class="attr">id</span>:<span class="string">&#x27;1345999464497483777&#x27;</span>, <span class="attr">name</span>:<span class="string">&#x27;efc&#x27;</span>&#125;,</span><br><span class="line">     &#123;<span class="attr">id</span>:<span class="string">&#x27;1345999404976115713&#x27;</span>, <span class="attr">name</span>:<span class="string">&#x27;xxc&#x27;</span>&#125;,</span><br><span class="line">     &#123;<span class="attr">id</span>:???, name:<span class="string">&#x27;????&#x27;</span>&#125;,</span><br><span class="line">     <span class="comment">//checkedArr是被选中的选项,值为list的id组成的数组.</span></span><br><span class="line">	 checkedArr: [<span class="string">&quot;1345999489956909057,&quot;</span><span class="number">1345999464497483777</span><span class="string">&quot;]</span></span><br><span class="line"><span class="string"> &#125;</span></span><br><span class="line"><span class="string">&#125; </span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
+<p>把list过滤,拿到被选中后的list</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> list = <span class="built_in">this</span>.list;</span><br><span class="line"><span class="keyword">let</span> checkedArr = <span class="built_in">this</span>.checkedArr</span><br><span class="line"><span class="comment">// console.log(&#x27;筛选出被选中的商品====&#x27;,data);</span></span><br><span class="line">list = list.filter(<span class="function"><span class="params">item</span> =&gt;</span> checkedArr.includes(item.id)) <span class="comment">//如果没有相同项，结果是undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;筛选出被选中的list====&#x27;</span>, list);</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>前端杂项</category>
+      </categories>
+      <tags>
+        <tag>数组</tag>
+        <tag>筛选</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数组删除问题</title>
+    <url>/wyza1234.github.io/2020/12/21/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E6%9D%82%E9%A1%B9/%E6%95%B0%E7%BB%84%E5%88%A0%E9%99%A4%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p><a href="https://www.cnblogs.com/liweijian/p/7686667.html">关于JS数组循环删除元素出现下标不对的问题
+</a><br><a href="https://blog.csdn.net/weixin_30825199/article/details/96306957">js 删除数组中多个元素_放错位的天才的博客-CSDN博客</a></p>
+<h3 id="数组删除发现错位-，比如："><a href="#数组删除发现错位-，比如：" class="headerlink" title="数组删除发现错位 ，比如："></a>数组删除发现错位 ，比如：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">list: [&#123;</span><br><span class="line">       name: &quot;大米&quot;,</span><br><span class="line">       id: 1,</span><br><span class="line">       num: 10,</span><br><span class="line">       price: 100, &#x2F;&#x2F; mark: list</span><br><span class="line">       isChecked: false,</span><br><span class="line">       imgPath: &quot;&#x2F;static&#x2F;images&#x2F;cart&#x2F;s6.png&quot;</span><br><span class="line">     &#125;,</span><br><span class="line">     &#123;</span><br><span class="line">       name: &quot;芹菜&quot;,</span><br><span class="line">       id: 2,</span><br><span class="line">       num: 20,</span><br><span class="line">       price: 200,</span><br><span class="line">       isChecked: false,</span><br><span class="line">       imgPath: &quot;&#x2F;static&#x2F;images&#x2F;cart&#x2F;s5.png&quot;</span><br><span class="line">     &#125;</span><br><span class="line">   ]</span><br></pre></td></tr></table></figure>
+<p>list.splice(1,1),删除的是第0个</p>
+<p>原因是删除一个数组元素后，index值和length发生的改变。</p>
+<h3 id="解决：-用for循环-i–，从后往前删。"><a href="#解决：-用for循环-i–，从后往前删。" class="headerlink" title="解决： 用for循环 i–，从后往前删。"></a>解决： 用for循环 i–，从后往前删。</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for (var i &#x3D; list.length - 1; i &gt;&#x3D; 0; i--) &#123;</span><br><span class="line">     if (list[i].id &#x3D;&#x3D; id) &#123;</span><br><span class="line">       arr.splice(i, 1);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>前端杂项</category>
+      </categories>
+      <tags>
+        <tag>数组</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>授受动词</title>
+    <url>/wyza1234.github.io/2020/12/21/%E6%97%A5%E8%AF%AD%E7%AC%94%E8%AE%B0/%E6%A0%87%E6%97%A5/%E5%88%9D%E7%BA%A7/%E6%8E%88%E5%8F%97%E5%8A%A8%E8%AF%8D/</url>
+    <content><![CDATA[<h1 id="1-授受动词"><a href="#1-授受动词" class="headerlink" title="1. 授受动词"></a>1. 授受动词</h1><hr>
+<ul>
+<li><h2 id="1-我方获取-获取"><a href="#1-我方获取-获取" class="headerlink" title="1.我方获取 获取"></a>1.我方获取 获取</h2><ul>
+<li><h3 id="1-1-我获取ーーー-获取"><a href="#1-1-我获取ーーー-获取" class="headerlink" title="1.1 我获取ーーー　 获取"></a>1.1 我获取ーーー　 获取</h3><ol>
+<li><p>私は  <em>先生</em>  <strong>に</strong> 本  <strong>を</strong> もらいました。</p>
+</li>
+<li><p>私は <em>学校</em>  <strong>から</strong> 教科書  <strong>を</strong> もらいました。</p>
+</li>
+</ol>
+</li>
+<li><h3 id="1-2-我方获取ーーー-获取"><a href="#1-2-我方获取ーーー-获取" class="headerlink" title="1.2  我方获取ーーー　 获取"></a>1.2  我方获取ーーー　 获取</h3><ol>
+<li><p>母は <em>友达</em>  <strong>に</strong> 本  <strong>を</strong> もらいました。</p>
+</li>
+<li><p>母は <em>会社</em>  <strong>から</strong> 本  <strong>を</strong> もらいました。</p>
+</li>
+</ol>
+</li>
+<li><h3 id="1-3-他方获取-获取"><a href="#1-3-他方获取-获取" class="headerlink" title="1.3 他方获取　获取"></a>1.3 他方获取　获取</h3><ol>
+<li><p>彼は <em>友达</em>  <strong>に</strong> 本  <strong>を</strong> もらいました。</p>
+</li>
+<li><p>彼は <em>会社</em>  <strong>から</strong> 本  <strong>を</strong> もらいました。</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>TIPS:<br>从 <strong>个人</strong> 那里获取一般用 <strong>に</strong><br>从 <strong>团体</strong> 那里获取一般用 <strong>から</strong></p>
+</blockquote>
+<hr>
+<ul>
+<li><h2 id="2-我方-给与"><a href="#2-我方-给与" class="headerlink" title="2. 我方 给与"></a>2. 我方 给与</h2><ul>
+<li><h3 id="2-1-我方给他方"><a href="#2-1-我方给他方" class="headerlink" title="2.1 我方给他方"></a>2.1 我方给他方</h3><ol>
+<li>私は <em>友达</em>    <strong>に</strong> 本  <strong>を</strong> あげます。</li>
+<li>母は  <em>友达</em>    <strong>に **本  **を</strong> あげます。</li>
+</ol>
+</li>
+<li><h3 id="2-2-他方给他方"><a href="#2-2-他方给他方" class="headerlink" title="2.2 他方给他方"></a>2.2 他方给他方</h3></li>
+<li><ol>
+<li>彼は <em>友达</em>  <strong>に</strong> 本  <strong>を</strong> あげます。</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>彼は <em>友达</em>  <strong>に</strong> 本  <strong>を</strong> あげます。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>あげます</strong> 这种说法不礼貌</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>授受动词</tag>
+        <tag>获取</tag>
+        <tag>给与</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第一課　李さんは中国人です</title>
+    <url>/wyza1234.github.io/2020/12/24/%E6%97%A5%E8%AF%AD%E7%AC%94%E8%AE%B0/%E6%A0%87%E6%97%A5/%E6%A0%87%E6%97%A5%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92/%E5%88%9D%E7%BA%A7/%E7%AC%AC%E4%B8%80%E8%AA%B2%E3%80%80%E6%9D%8E%E3%81%95%E3%82%93%E3%81%AF%E4%B8%AD%E5%9B%BD%E4%BA%BA%E3%81%A7%E3%81%99/</url>
+    <content><![CDATA[<h1 id="出迎え"><a href="#出迎え" class="headerlink" title="出迎え"></a>出迎え</h1><h3 id="迎接"><a href="#迎接" class="headerlink" title="迎接"></a>迎接</h3></br>
+
+<p><em>李：ＪＣ企画の小野さんですか。</em><br> <strong>(你是)JC企划的小野吗？</strong></p>
+<p><em>小野：はい、小野です。李秀麗さんですか。</em><br> <strong>是的，我是小野。（你是）李秀麗吗？</strong></p>
+<p><em>李：はい、李秀麗です。はじめまして。どうぞよろしくおねがいします。</em><br><strong>是的，（我是）李秀麗。初次见面，请多关照。</strong></p>
+<p><em>小野：はじめまして、小野緑です。</em><br><strong>初次见面，（我是）小野緑</strong></p>
+<p><em>森：李さん、こんにちは。</em><br> <strong>李小姐，你好</strong></p>
+<p><em>李：吉田さんですか。</em><br><strong>（你是）吉田先生吗？</strong></p>
+<p><em>森：いいえ、私は吉田じゃありません。森です。</em><br><strong>不是，我不是吉田。（我）是森。</strong></p>
+<p><em>李：あっ、森さんですか。どうもすみません。</em><br><strong>啊，是森先生吗？真是不好意思。</strong></p>
+<p><em>森：いいえ、どうぞよろしく。</em><br><strong>不用（客气），初次见面</strong></p>
+<p><em>李：李秀麗です。こちらこそ、よろしくお願いします。</em><br><strong>（我是）李秀麗，我这边才是，请多关照。</strong></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第三課　ここはデパートです</title>
+    <url>/wyza1234.github.io/2020/12/24/%E6%97%A5%E8%AF%AD%E7%AC%94%E8%AE%B0/%E6%A0%87%E6%97%A5/%E6%A0%87%E6%97%A5%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92/%E5%88%9D%E7%BA%A7/%E7%AC%AC%E4%B8%89%E8%AA%B2%E3%80%80%E3%81%93%E3%81%93%E3%81%AF%E3%83%87%E3%83%91%E3%83%BC%E3%83%88%E3%81%A7%E3%81%99/</url>
+    <content><![CDATA[<h1 id="ホテルの周辺"><a href="#ホテルの周辺" class="headerlink" title="ホテルの周辺"></a>ホテルの周辺</h1><h3 id="宾馆的周边"><a href="#宾馆的周边" class="headerlink" title="宾馆的周边"></a>宾馆的周边</h3><p><em>小野：ここはコンビニです。隣は喫茶店です。</em><br><strong>这里是便利店。旁边是咖啡店。</strong></p>
+<p><em>小野：あそこはマンションです</em><br><strong>那里是高级公寓。</strong></p>
+<p><em>李：あの建物はなんですか。</em><br><strong>那个大楼是什么？</strong></p>
+<p><em>小野：あそこもマンションです。</em><br><strong>那里也是高级公寓</strong></p>
+<p><em>李：マンションの隣は？</em><br><strong>高级公寓的旁边是？</strong></p>
+<p><em>小野：マンションの隣は病院です。</em><br><strong>高级公寓的旁边是医院</strong></p>
+<p><em>李：本屋はどこですか。</em><br><strong>书店在哪？</strong></p>
+<p><em>小野：そこです。そのビルの二階です。</em><br><strong>那里。那个大楼的二楼。</strong></p>
+<p><em>李：あのう、東京の地図はどこですか。</em><br><strong>那个，东京的地图在哪？</strong></p>
+<p><em>店員：地図ですか。そちらです。</em><br><strong>地图吗？那里。</strong></p>
+<p><em>李：いくらですか。</em><br><strong>多少钱？</strong></p>
+<p><em>店員：五百円です。</em><br><strong>五百块</strong></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第二課　これは本です</title>
+    <url>/wyza1234.github.io/2020/12/24/%E6%97%A5%E8%AF%AD%E7%AC%94%E8%AE%B0/%E6%A0%87%E6%97%A5/%E6%A0%87%E6%97%A5%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92/%E5%88%9D%E7%BA%A7/%E7%AC%AC%E4%BA%8C%E8%AA%B2%E3%80%80%E3%81%93%E3%82%8C%E3%81%AF%E6%9C%AC%E3%81%A7%E3%81%99/</url>
+    <content><![CDATA[<h1 id="家族の写真"><a href="#家族の写真" class="headerlink" title="家族の写真"></a>家族の写真</h1><h3 id="家人照片"><a href="#家人照片" class="headerlink" title="家人照片"></a>家人照片</h3><p><em>小野：李さん、それは何ですか。</em><br><strong>小李，这是什么？</strong></p>
+<p><em>李：これですか。家族の写真です。</em><br><strong>这个吗？我家人的照片</strong></p>
+<p><em>小野：この方は何方ですか。</em><br><strong>这位是谁啊？</strong></p>
+<p><em>李：私の母です。</em><br><strong>我妈妈</strong></p>
+<p><em>小野：お母さんは　おいくつですか。</em><br><strong>你母亲多大了</strong></p>
+<p><em>李：５２歳です。</em><br><strong>52岁</strong></p>
+<p><em>李：小野さん、これ、どうぞ。</em><br><strong>小野，这个给你。</strong></p>
+<p><em>小野：えっ、何ですか。</em><br><strong>哎，这是什么？</strong></p>
+<p><em>李：お土産です。</em><br><strong>土特产。</strong></p>
+<p><em>小野：シルクのハンカチですか。</em><br><strong>丝绸手帕吗？</strong></p>
+<p><em>李：ええ、スワトウのハンカチです。中国の名産品です。</em><br><strong>嗯，汕头的手帕，中国的名产。</strong></p>
+<p><em>小野：どうも　ありがとうございます。</em><br><strong>非常感谢。</strong></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第四課　部屋に机と椅子があります</title>
+    <url>/wyza1234.github.io/2020/12/24/%E6%97%A5%E8%AF%AD%E7%AC%94%E8%AE%B0/%E6%A0%87%E6%97%A5/%E6%A0%87%E6%97%A5%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92/%E5%88%9D%E7%BA%A7/%E7%AC%AC%E5%9B%9B%E8%AA%B2%E3%80%80%E9%83%A8%E5%B1%8B%E3%81%AB%E6%9C%BA%E3%81%A8%E6%A4%85%E5%AD%90%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99/</url>
+    <content><![CDATA[<h1 id="会社の場所"><a href="#会社の場所" class="headerlink" title="会社の場所"></a>会社の場所</h1><h3 id="公司地址"><a href="#公司地址" class="headerlink" title="公司地址"></a>公司地址</h3><p><em>李：小野さん、会社はどこにありますか。</em><br><strong>小野，公司在哪啊？</strong></p>
+<p><em>小野：ええと、ここです。</em><br><strong>嗯嗯，在这。</strong></p>
+<p><em>李：近くに駅がありますか。</em><br><strong>附近有车站吗？</strong></p>
+<p><em>小野：ええ。ＪＲと地下鉄の駅があります。ＪＲの駅はここです。</em><br><strong>嗯。JR和地铁站都有。JR的车站在这。</strong></p>
+<p><em>李：地鉄の駅はここですね。</em><br><strong>地铁站在这呢。</strong></p>
+<p><em>小野：ええ、そうです。ＪＲの駅のとなりに地下鉄の駅があります。</em><br><strong>嗯，是这样呢。JR站旁边就是地铁站</strong></p>
+<p><em>李：小野さんの家はどちらですか。</em><br><strong>小野你家是哪儿的？</strong></p>
+<p><em>小野：わたしの家は横浜です。</em><br><strong>我家是横滨的。</strong></p>
+<p><em>李：ご家族も横浜ですか。</em><br><strong>你家人也在横滨吗？</strong></p>
+<p><em>小野：いいえ、私は一人暮らしです。</em><br><strong>没有，我是离开家人一个人住。</strong></p>
+<p><em>李：ご両親はどちらですか。</em><br><strong>你爸爸妈妈在哪？</strong></p>
+<p><em>小野：両親は名古屋にいます。</em><br><strong>我爸妈在名古屋。</strong></p>
+<p><em>李：ご兄弟は？</em><br><strong>你兄弟姐妹呢？</strong></p>
+<p><em>小野：大阪に妹がいます</em><br><strong>我妹妹在大阪。</strong></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>分类</title>
+    <url>/wyza1234.github.io/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Search</title>
+    <url>/wyza1234.github.io/search/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>标签</title>
+    <url>/wyza1234.github.io/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+</search>

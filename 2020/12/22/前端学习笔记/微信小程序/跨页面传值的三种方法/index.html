@@ -1,0 +1,477 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>跨页面传值的三种方法 | 静语庄园</title><meta name="keywords" content="页面传值"><meta name="author" content="lolicraft"><meta name="copyright" content="lolicraft"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="1. 全局变量1.1 在 app.js中定义全局变量1234globalData: &amp;#123;    userInfo: null,    globalName:&quot;abc&quot;  &amp;#125;  1.2在其他页面使用：12let app &#x3D; getApp();    console.log(app.globalData.globalName)  全局变量，刷新消失    2. 本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨页面传值的三种方法">
+<meta property="og:url" content="https://wyza1234.github.io/2020/12/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E8%B7%A8%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="静语庄园">
+<meta property="og:description" content="1. 全局变量1.1 在 app.js中定义全局变量1234globalData: &amp;#123;    userInfo: null,    globalName:&quot;abc&quot;  &amp;#125;  1.2在其他页面使用：12let app &#x3D; getApp();    console.log(app.globalData.globalName)  全局变量，刷新消失    2. 本">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wyza1234.github.io/img/2.jpg">
+<meta property="article:published_time" content="2020-12-22T13:28:53.000Z">
+<meta property="article:modified_time" content="2021-01-22T13:05:32.388Z">
+<meta property="article:author" content="lolicraft">
+<meta property="article:tag" content="页面传值">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wyza1234.github.io/img/2.jpg"><link rel="shortcut icon" href="/wyza1234.github.io/img/favicon.ico"><link rel="canonical" href="https://wyza1234.github.io/2020/12/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E8%B7%A8%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="kTwwiwdmXkUgfQ-saMxUdXDnEa9QT1baIsJ5EjW-hhM"/><link rel="stylesheet" href="/wyza1234.github.io/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-NQNRVG2MK8"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-NQNRVG2MK8');
+</script><script>var GLOBAL_CONFIG = { 
+  root: '/wyza1234.github.io/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":300,"position":"top","messagePrev":"距离文章发布已经过去了","messageNext":"天，文章提及的工具，方法可能已失效。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-01-22 21:05:32'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}const fontSizeVal = saveToLocal.get('global-font-size')
+if (fontSizeVal !== undefined) {
+  document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/wyza1234.github.io/img/favicon.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/wyza1234.github.io/archives/"><div class="headline">文章</div><div class="length-num">18</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/wyza1234.github.io/tags/"><div class="headline">标签</div><div class="length-num">23</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/wyza1234.github.io/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/wyza1234.github.io/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/wyza1234.github.io/archives/"><i class="fa-fw fas fa-archive"></i><span> 文档</span></a></div><div class="menus_item"><a class="site-page" href="/wyza1234.github.io/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/wyza1234.github.io/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/wyza1234.github.io/img/2.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/wyza1234.github.io/">静语庄园</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/wyza1234.github.io/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/wyza1234.github.io/archives/"><i class="fa-fw fas fa-archive"></i><span> 文档</span></a></div><div class="menus_item"><a class="site-page" href="/wyza1234.github.io/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/wyza1234.github.io/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">跨页面传值的三种方法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-22T13:28:53.000Z" title="发表于 2020-12-22 21:28:53">2020-12-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-22T13:05:32.388Z" title="更新于 2021-01-22 21:05:32">2021-01-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/wyza1234.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">小程序</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">200</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="1-全局变量"><a href="#1-全局变量" class="headerlink" title="1. 全局变量"></a>1. 全局变量</h2><h3 id="1-1-在-app-js中定义全局变量"><a href="#1-1-在-app-js中定义全局变量" class="headerlink" title="1.1 在 app.js中定义全局变量"></a>1.1 在 <code>app.js</code>中定义全局变量</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">globalData: &#123;</span><br><span class="line">    userInfo: <span class="literal">null</span>,</span><br><span class="line">    globalName:<span class="string">&quot;abc&quot;</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2在其他页面使用："><a href="#1-2在其他页面使用：" class="headerlink" title="1.2在其他页面使用："></a>1.2在其他页面使用：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> app = getApp();    </span><br><span class="line"><span class="built_in">console</span>.log(app.globalData.globalName)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>全局变量，刷新消失</p>
+</blockquote>
+</br>
+
+<h2 id="2-本地储存"><a href="#2-本地储存" class="headerlink" title="2. 本地储存"></a>2. 本地储存</h2><p>推荐使用 <strong>同步方式(Sync)</strong></p>
+<p>JS中：</p>
+<h3 id="2-1-存入数据"><a href="#2-1-存入数据" class="headerlink" title="2.1 存入数据"></a>2.1 存入数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">wx.setStorageSync(&#123;</span><br><span class="line">	key: <span class="string">&#x27;information&#x27;</span>,</span><br><span class="line">	<span class="function"><span class="title">success</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//do things</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="function"><span class="title">fail</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//do things</span></span><br><span class="line">	&#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>success 和 fail 回调函数可以省略 </p>
+</blockquote>
+ </br>
+
+<h3 id="2-2-取出数据"><a href="#2-2-取出数据" class="headerlink" title="2.2 取出数据"></a>2.2 取出数据</h3><p> <code>wx.getStorageSync(&quot;key名称&quot;)</code></p>
+<h3 id="2-3-删除数据"><a href="#2-3-删除数据" class="headerlink" title="2.3 删除数据"></a>2.3 删除数据</h3><pre><code>`wx.removeStorageSync(&quot;key名称&quot;)`</code></pre>
+<h3 id="2-4-删除全部数据"><a href="#2-4-删除全部数据" class="headerlink" title="2.4 删除全部数据"></a>2.4 删除全部数据</h3><pre><code>`wx.clearStorageSync()`</code></pre>
+</br>
+
+<h2 id="3-路由传参"><a href="#3-路由传参" class="headerlink" title="3. #路由传参"></a>3. #路由传参</h2><h3 id="3-1-A页面发送参数"><a href="#3-1-A页面发送参数" class="headerlink" title="3.1 A页面发送参数"></a>3.1 A页面发送参数</h3> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> wx.navigateTo(&#123;</span><br><span class="line">   url:<span class="string">&#x27;../pageD/pageD?name=&quot;李白&quot;&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意: wx.switchTab 中的 url 不能传参数。</p>
+</blockquote>
+</br>
+
+<h3 id="3-2-B页面接收参数"><a href="#3-2-B页面接收参数" class="headerlink" title="3.2 B页面接收参数"></a>3.2 B页面接收参数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  onLoad: <span class="function"><span class="keyword">function</span>(<span class="params">option</span>)</span>&#123;</span><br><span class="line"> 	<span class="built_in">console</span>.log(option.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">lolicraft</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://wyza1234.github.io/2020/12/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E8%B7%A8%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/">https://wyza1234.github.io/2020/12/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E8%B7%A8%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://wyza1234.github.io" target="_blank">静语庄园</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/wyza1234.github.io/tags/%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC/">页面传值</a></div><div class="post_share"><div class="addtoany"><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class="a2a_button_facebook"></a><a class="a2a_button_twitter"></a><a class="a2a_button_wechat"></a><a class="a2a_button_sina_weibo"></a><a class="a2a_button_facebook_messenger"></a><a class="a2a_button_email"></a><a class="a2a_button_copy_link"></a><a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a></div></div><script async="async" src="https://static.addtoany.com/menu/page.js"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/wyza1234.github.io/2020/12/24/%E6%97%A5%E8%AF%AD%E7%AC%94%E8%AE%B0/%E6%A0%87%E6%97%A5/%E6%A0%87%E6%97%A5%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92/%E5%88%9D%E7%BA%A7/%E7%AC%AC%E5%9B%9B%E8%AA%B2%E3%80%80%E9%83%A8%E5%B1%8B%E3%81%AB%E6%9C%BA%E3%81%A8%E6%A4%85%E5%AD%90%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99/"><img class="prev-cover" data-lazy-src="/wyza1234.github.io/img/6.jpg" onerror="onerror=null;src='/wyza1234.github.io/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">第四課　部屋に机と椅子があります</div></div></a></div><div class="next-post pull-right"><a href="/wyza1234.github.io/2020/12/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AC%AC%E4%B8%89%E5%A4%A9/"><img class="next-cover" data-lazy-src="/wyza1234.github.io/img/5.jpg" onerror="onerror=null;src='/wyza1234.github.io/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">微信小程序第三天</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/wyza1234.github.io/2020/12/21/前端学习笔记/微信小程序/小程序杂乱知识点/" title="小程序杂乱知识点"><img class="cover" data-lazy-src="/wyza1234.github.io/img/3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-21</div><div class="title">小程序杂乱知识点</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Livere</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="lv-container" data-id="city" data-uid="MTAyMC81MjIyMy8yODcwMw"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/wyza1234.github.io/img/favicon.jpg" onerror="this.onerror=null;this.src='/wyza1234.github.io/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">lolicraft</div><div class="author-info__description">海都长椅协会会员</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/wyza1234.github.io/archives/"><div class="headline">文章</div><div class="length-num">18</div></a></div><div class="card-info-data-item is-center"><a href="/wyza1234.github.io/tags/"><div class="headline">标签</div><div class="length-num">23</div></a></div><div class="card-info-data-item is-center"><a href="/wyza1234.github.io/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/wyza1234"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/wyza1234" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:wyza12345@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Z23崛起了！！！</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-number">1.</span> <span class="toc-text">1. 全局变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%9C%A8-app-js%E4%B8%AD%E5%AE%9A%E4%B9%89%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 在 app.js中定义全局变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2%E5%9C%A8%E5%85%B6%E4%BB%96%E9%A1%B5%E9%9D%A2%E4%BD%BF%E7%94%A8%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">1.2在其他页面使用：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9C%AC%E5%9C%B0%E5%82%A8%E5%AD%98"><span class="toc-number">2.</span> <span class="toc-text">2. 本地储存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%AD%98%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 存入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%8F%96%E5%87%BA%E6%95%B0%E6%8D%AE"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 取出数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 删除数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E5%88%A0%E9%99%A4%E5%85%A8%E9%83%A8%E6%95%B0%E6%8D%AE"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 删除全部数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%B7%AF%E7%94%B1%E4%BC%A0%E5%8F%82"><span class="toc-number">3.</span> <span class="toc-text">3. #路由传参</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-A%E9%A1%B5%E9%9D%A2%E5%8F%91%E9%80%81%E5%8F%82%E6%95%B0"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 A页面发送参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-B%E9%A1%B5%E9%9D%A2%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 B页面接收参数</span></a></li></ol></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/wyza1234.github.io/2021/01/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/elementUI/elementUI%E6%9D%82%E4%B9%B1%E7%9F%A5%E8%AF%86%E7%82%B9/" title="elementUI杂乱知识点"><img data-lazy-src="/wyza1234.github.io/img/6.jpg" onerror="this.onerror=null;this.src='/wyza1234.github.io/img/404.jpg'" alt="elementUI杂乱知识点"/></a><div class="content"><a class="title" href="/wyza1234.github.io/2021/01/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/elementUI/elementUI%E6%9D%82%E4%B9%B1%E7%9F%A5%E8%AF%86%E7%82%B9/" title="elementUI杂乱知识点">elementUI杂乱知识点</a><time datetime="2021-01-22T12:55:53.000Z" title="发表于 2021-01-22 20:55:53">2021-01-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/wyza1234.github.io/2021/01/04/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E6%9D%82%E9%A1%B9/%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E6%9D%A1%E4%BB%B6%E7%AD%9B%E9%80%89/" title="两个数组条件筛选"><img data-lazy-src="/wyza1234.github.io/img/3.jpg" onerror="this.onerror=null;this.src='/wyza1234.github.io/img/404.jpg'" alt="两个数组条件筛选"/></a><div class="content"><a class="title" href="/wyza1234.github.io/2021/01/04/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E6%9D%82%E9%A1%B9/%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E6%9D%A1%E4%BB%B6%E7%AD%9B%E9%80%89/" title="两个数组条件筛选">两个数组条件筛选</a><time datetime="2021-01-04T13:09:00.000Z" title="发表于 2021-01-04 21:09:00">2021-01-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/wyza1234.github.io/2020/12/24/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C/" title="小程序表单校验"><img data-lazy-src="/wyza1234.github.io/img/7.jpg" onerror="this.onerror=null;this.src='/wyza1234.github.io/img/404.jpg'" alt="小程序表单校验"/></a><div class="content"><a class="title" href="/wyza1234.github.io/2020/12/24/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C/" title="小程序表单校验">小程序表单校验</a><time datetime="2020-12-24T13:32:53.000Z" title="发表于 2020-12-24 21:32:53">2020-12-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/wyza1234.github.io/2020/12/24/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%B0%8F%E7%A8%8B%E5%BA%8Frequest%E5%B0%81%E8%A3%85/" title="小程序Request封装"><img data-lazy-src="/wyza1234.github.io/img/8.jpg" onerror="this.onerror=null;this.src='/wyza1234.github.io/img/404.jpg'" alt="小程序Request封装"/></a><div class="content"><a class="title" href="/wyza1234.github.io/2020/12/24/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%B0%8F%E7%A8%8B%E5%BA%8Frequest%E5%B0%81%E8%A3%85/" title="小程序Request封装">小程序Request封装</a><time datetime="2020-12-24T13:30:53.000Z" title="发表于 2020-12-24 21:30:53">2020-12-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/wyza1234.github.io/2020/12/24/%E6%97%A5%E8%AF%AD%E7%AC%94%E8%AE%B0/%E6%A0%87%E6%97%A5/%E6%A0%87%E6%97%A5%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92/%E5%88%9D%E7%BA%A7/%E7%AC%AC%E4%B8%80%E8%AA%B2%E3%80%80%E6%9D%8E%E3%81%95%E3%82%93%E3%81%AF%E4%B8%AD%E5%9B%BD%E4%BA%BA%E3%81%A7%E3%81%99/" title="第一課　李さんは中国人です"><img data-lazy-src="/wyza1234.github.io/img/1.jpg" onerror="this.onerror=null;this.src='/wyza1234.github.io/img/404.jpg'" alt="第一課　李さんは中国人です"/></a><div class="content"><a class="title" href="/wyza1234.github.io/2020/12/24/%E6%97%A5%E8%AF%AD%E7%AC%94%E8%AE%B0/%E6%A0%87%E6%97%A5/%E6%A0%87%E6%97%A5%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92/%E5%88%9D%E7%BA%A7/%E7%AC%AC%E4%B8%80%E8%AA%B2%E3%80%80%E6%9D%8E%E3%81%95%E3%82%93%E3%81%AF%E4%B8%AD%E5%9B%BD%E4%BA%BA%E3%81%A7%E3%81%99/" title="第一課　李さんは中国人です">第一課　李さんは中国人です</a><time datetime="2020-12-24T08:08:53.000Z" title="发表于 2020-12-24 16:08:53">2020-12-24</time></div></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/wyza1234.github.io/img/2.jpg)"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By lolicraft</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">誰が世界を作ったんですか。。</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/wyza1234.github.io/js/utils.js"></script><script src="/wyza1234.github.io/js/main.js"></script><script src="/wyza1234.github.io/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.spacingElementById('content-inner')
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.spacingElementById('content-inner')
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/wyza1234.github.io/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'd31cxsPVC6hr7XExXlSzue11-MdYXbMMI',
+      appKey: 'ilRLQkQn8pmOQx5QIlTyswiK',
+      placeholder: '这里是留言区哦，记得填上昵称邮箱',
+      avatar: 'monsterid',
+      meta: 'nick,mail'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '//i0.hdslb.com/bfs/emote/',
+      emojiMaps: {"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},
+      enableQQ: false,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign({}, initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Valine' === 'Livere' || !true) {
+  if (true) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.17.0/js/md5.min.js"></script><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+    content = content.replace(/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png|webp)/g, '') // remove image link
+    content = content.replace(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi, '') // remove url
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getIcon = (icon, mail) => {
+    if (icon) return icon
+    
+    let defaultIcon = '?d=mp'
+    let iconUrl = `https://gravatar.loli.net/avatar/${md5(mail.toLowerCase()) + defaultIcon}`
+    return iconUrl
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          let name = 'src'
+          if(true) {
+            name = 'data-lazy-src'
+          }
+          result += `<a href='${array[i].url}' class="thumbnail"><img ${name}='${getIcon(array[i].avatar, array[i].mail)}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick}</span><time> / ${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = () => {
+      let serverURL = ''
+      if (false) {
+        serverURL = ''
+      } else {
+        serverURL = 'https://d31cxsPV.api.lncldglobal.com'
+      }
+
+    var settings = {
+      "method": "GET",
+      "headers": {
+        "X-LC-Id": 'd31cxsPVC6hr7XExXlSzue11-MdYXbMMI',
+        "X-LC-Key": 'ilRLQkQn8pmOQx5QIlTyswiK',
+        "Content-Type": "application/json"
+      },
+    }
+
+    fetch(`${serverURL}/1.1/classes/Comment?limit=6&order=-createdAt`,settings)
+      .then(response => response.json())
+      .then(data => {
+        const valineArray = data.results.map(function (e) {
+          return {
+            'avatar': e.QQAvatar,
+            'content': changeContent(e.comment),
+            'mail': e.mail,
+            'nick': e.nick,
+            'url': e.url,
+            'date': e.createdAt,
+          }
+        })
+        saveToLocal.set('leancloud-newest-comments', JSON.stringify(valineArray), 10/(60*24))
+        generateHtml(valineArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      }) 
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('leancloud-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (true) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: true,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', 'G-NQNRVG2MK8', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})</script></div></body></html>
